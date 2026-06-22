@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flex Fitness — Privacy Policy</title>
+  <meta name="description" content="Flex Fitness official website — Privacy Policy in English and Arabic." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #111111;
+      --muted: #555555;
+      --accent: #ff6600; /* Brand orange */
+      --radius: 12px;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ===== Header / Navbar ===== */
+    header.site-header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .logo img {
+      height: 48px;
+      width: auto;
+    }
+    header .logo span {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav a, nav button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 4px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    nav a:hover, nav button:hover {
+      color: var(--accent);
+    }
+
+    /* ===== Page Layout ===== */
+    .wrap {
+      max-width: 1100px;
+      margin: 32px auto 72px;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: clamp(28px, 2.2vw + 20px, 46px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .lang-switch button {
+      cursor: pointer; border: 1px solid #ddd; background: #fff; color: var(--ink);
+      padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 14px;
+    }
+    .lang-switch button.active { background: var(--accent); color: #fff; }
+
+    .grid {
+      display: grid; gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 980px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .card h2 { margin-top: 0; font-size: 22px; color: var(--accent); }
+    .card h3 { margin: 18px 0 8px; font-size: 16px; color: var(--muted); font-weight: 600; }
+
+    .list { padding-left: 20px; }
+    .list li { margin: 8px 0; }
+    .rtl .list { padding-left: 0; padding-right: 20px; }
+
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    [lang="ar"] { font-family: "Tajawal", "Noto Sans Arabic", Cairo, sans-serif; }
+    .rtl { direction: rtl; }
+
+    /* ===== Deletion Modal ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      margin: 16px;
+      box-sizing: border-box;
+      transform: translateY(20px);
+      transition: transform 0.2s ease-in-out;
+    }
+    .modal-overlay.active .modal-box {
+      transform: translateY(0);
+    }
+    .modal-box h2 {
+      margin-top: 0;
+      color: #d9381e; /* Danger red */
+      font-size: 24px;
+    }
+    .modal-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .form-checkbox input {
+      margin-top: 4px;
+      cursor: pointer;
+    }
+    .form-checkbox label {
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .modal-actions button {
+      cursor: pointer;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-close {
+      background: #eee;
+      color: var(--ink);
+    }
+    .btn-close:hover {
+      background: #e0e0e0;
+    }
+    .btn-submit {
+      background: #d9381e;
+      color: #fff;
+    }
+    .btn-submit:hover {
+      background: #b82d16;
+    }
+
+    @media print {
+      nav, .lang-switch, footer, .modal-overlay { display: none !important; }
+      .wrap { margin: 0; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="ic_launcher.png" alt="Flex Fitness Logo">
+      <span id="txt-brand-name">Flex Fitness</span>
+    </div>
+    <nav>
+      <a href="#" id="txt-nav-policy">Privacy Policy</a>
+      <button id="btn-delete-request" style="color: #d9381e;">Delete Account</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <div class="wrap">
+    <h1 id="txt-page-title">Privacy Policy</h1>
+    <div class="lang-switch">
+      <button id="btn-en" class="active">English</button>
+      <button id="btn-ar">العربية</button>
+    </div>
+
+    <!-- English -->
+    <section id="panel-en">
+      <p style="color:var(--muted); margin:0 0 18px;">
+        This Privacy Policy explains how the <strong>Flex Fitness</strong> mobile application
+        (package <strong>com.ajwan.gymapp</strong>), operated by <strong>RAJESH D D BABU</strong>,
+        collects, uses, retains, and deletes your personal data.
+        <strong>Last updated: 22 June 2026.</strong>
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h2>Information We Collect</h2>
+          <ul class="list">
+            <li>Personal details such as name, phone number, email, and age when registering.</li>
+            <li>Membership and subscription details.</li>
+            <li>App usage data such as preferences, logins, and interactions.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>How We Use Information</h2>
+          <ul class="list">
+            <li>To manage your membership account.</li>
+            <li>To process payments and renewals.</li>
+            <li>To provide support and respond to inquiries.</li>
+            <li>To improve our services and app experience.</li>
+            <li>To send notifications and offers (optional, you may opt out).</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Data Sharing</h2>
+          <ul class="list">
+            <li>We do not sell or rent your data.</li>
+            <li>Shared only with authorized staff and service providers under confidentiality agreements.</li>
+            <li>May be disclosed if required by law or for safety/security reasons.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Data Retention &amp; Security</h2>
+          <ul class="list">
+            <li><strong>How long we retain data:</strong> We retain personal information, including name, phone number, email address, age, membership details, and app usage data, for as long as the user maintains an active account with Flex Fitness. Inactive or closed accounts are deleted as described below.</li>
+            <li>If a user requests account deletion, personal data will be permanently deleted within 30 days of verification of the request, unless a longer retention period is required by applicable laws or regulatory requirements.</li>
+            <li>We implement reasonable technical and organizational security measures to protect user data from unauthorized access, disclosure, alteration, or destruction.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Your Rights</h2>
+          <ul class="list">
+            <li>You can request to access, update, or delete your data.</li>
+            <li>Contact us at <a href="mailto:info@flexq8.com">info@flexq8.com</a>.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Children's Privacy</h2>
+          <p>We do not knowingly collect data from individuals under 16 years old.</p>
+        </article>
+
+        <article class="card">
+          <h2>Data Deletion</h2>
+          <ul class="list">
+            <li>Users may request deletion of their account and personal data at any time by contacting us at info@flexq8.com.</li>
+            <li>Upon receiving and verifying a deletion request, we will permanently delete the user's personal data within 30 days, except where retention is required by law.</li>
+            <li>Users may also request access to or correction of their personal information by contacting us at info@flexq8.com.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Contact Us</h2>
+          <p>Email: <a href="mailto:info@flexq8.com">info@flexq8.com</a><br>
+          Phone: +965 2227 5454<br>
+          Address: Flex Fitness, Kuwait</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Arabic -->
+    <section id="panel-ar" hidden>
+      <p class="rtl" lang="ar" style="color:var(--muted); margin:0 0 18px; direction:rtl;">
+        توضح سياسة الخصوصية هذه كيفية قيام تطبيق <strong>فلكس فتنس</strong>
+        (المعرّف <strong>com.ajwan.gymapp</strong>)، المُشغَّل بواسطة <strong>RAJESH D D BABU</strong>،
+        بجمع بياناتك الشخصية واستخدامها والاحتفاظ بها وحذفها.
+        <strong>آخر تحديث: 22 يونيو 2026.</strong>
+      </p>
+      <div class="grid">
+        <article class="card rtl" lang="ar">
+          <h2>المعلومات التي نجمعها</h2>
+          <ul class="list">
+            <li>البيانات الشخصية مثل الاسم، رقم الهاتف، البريد الإلكتروني، والعمر عند التسجيل.</li>
+            <li>تفاصيل العضوية والاشتراكات.</li>
+            <li>بيانات استخدام التطبيق مثل التفضيلات وتسجيلات الدخول والتفاعلات.</li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>كيفية استخدام المعلومات</h2>
+          <ul class="list">
+            <li>لإدارة حساب العضوية الخاص بك.</li>
+            <li>لمعالجة المدفوعات والتجديدات.</li>
+            <li>لتقديم الدعم والرد على الاستفسارات.</li>
+            <li>لتحسين خدماتنا وتجربة التطبيق.</li>
+            <li>لإرسال إشعارات وعروض (اختيارية ويمكنك إلغاء الاشتراك فيها).</li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>مشاركة البيانات</h2>
+          <ul class="list">
+            <li>نحن لا نبيع أو نؤجر بياناتك.</li>
+            <li>يتم مشاركتها فقط مع الموظفين المخولين ومقدمي الخدمات بموجب اتفاقيات سرية.</li>
+            <li>قد يتم الإفصاح عنها إذا طُلب قانونيًا أو لأسباب تتعلق بالسلامة والأمن.</li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>الاحتفاظ بالبيانات والحماية</h2>
+          <ul class="list">
+            <li>نحتفظ بمعلوماتك الشخصية، بما في ذلك الاسم ورقم الهاتف والبريد الإلكتروني والعمر وتفاصيل العضوية وبيانات استخدام التطبيق، طالما كان حسابك نشطًا لدى فلكس فتنس.</li>
+            <li>في حال طلب المستخدم حذف حسابه، سيتم حذف بياناته الشخصية بشكل نهائي في غضون 30 يومًا من التحقق من الطلب، إلا إذا تطلبت القوانين أو اللوائح المعمول بها فترة احتفاظ أطول.</li>
+            <li>نطبق تدابير أمنية تقنية وتنظيمية معقولة لحماية بيانات المستخدم من الوصول غير المصرح به أو الإفصاح أو التعديل أو الإتلاف.</li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>حقوقك</h2>
+          <ul class="list">
+            <li>يمكنك طلب الوصول إلى بياناتك أو تحديثها أو حذفها.</li>
+            <li>تواصل معنا عبر البريد: <a href="mailto:info@flexq8.com">info@flexq8.com</a></li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>خصوصية الأطفال</h2>
+          <p>نحن لا نجمع عن قصد بيانات من الأفراد الذين تقل أعمارهم عن 16 عامًا.</p>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>حذف البيانات</h2>
+          <ul class="list">
+            <li>يمكن للمستخدمين طلب حذف حسابهم وبياناتهم الشخصية في أي وقت عن طريق التواصل معنا على info@flexq8.com.</li>
+            <li>بعد استلام طلب الحذف والتحقق منه، سنقوم بحذف بيانات المستخدم الشخصية بشكل نهائي في غضون 30 يومًا، إلا في الحالات التي يتطلب القانون فيها الاحتفاظ بها.</li>
+            <li>يمكن للمستخدمين أيضًا طلب الوصول إلى معلوماتهم الشخصية أو تصحيحها عن طريق التواصل معنا على info@flexq8.com.</li>
+          </ul>
+        </article>
+
+        <article class="card rtl" lang="ar">
+          <h2>اتصل بنا</h2>
+          <p>البريد الإلكتروني: <a href="mailto:info@flexq8.com">info@flexq8.com</a><br>
+          الهاتف: +965 2227 5454<br>
+          العنوان: فلكس فتنس، الكويت</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== Account Deletion Modal ===== -->
+  <div id="delete-modal" class="modal-overlay">
+    <div class="modal-box" id="modal-container">
+      <h2 id="modal-title">Account Deletion Request</h2>
+      <p id="modal-desc">Please fill out this form to submit your account deletion request. We will process your request shortly.</p>
+      
+      <form id="deletion-form">
+        <div class="form-group">
+          <label for="del-name" id="lbl-name">Full Name</label>
+          <input type="text" id="del-name" required placeholder="Enter your full name">
+        </div>
+        
+        <div class="form-group">
+          <label for="del-phone" id="lbl-phone">Registered Phone Number</label>
+          <input type="tel" id="del-phone" required placeholder="e.g. +965 2227 5454">
+        </div>
+
+        <div class="form-group">
+          <label for="del-civilid" id="lbl-civilid">Civil ID / Passport</label>
+          <input type="text" id="del-civilid" required placeholder="Enter your Civil ID">
+        </div>
+
+        <div class="form-group">
+          <label for="del-reason" id="lbl-reason">Reason for Deletion</label>
+          <textarea id="del-reason" rows="3" required placeholder="Briefly tell us why you are deleting your account"></textarea>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="del-confirm" required>
+          <label for="del-confirm" id="lbl-confirm">I understand that deleting my account is permanent and all associated membership records will be deactivated.</label>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-close" id="btn-modal-cancel">Cancel</button>
+          <button type="submit" class="btn-submit" id="btn-modal-submit">Send Deletion Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <span id="txt-footer-copyright">© 2026 Flex Fitness</span> | <a href="#" id="txt-footer-link">Privacy Policy</a>
+  </footer>
+
+  <script>
+    const btnEn = document.getElementById('btn-en');
+    const btnAr = document.getElementById('btn-ar');
+    const panelEn = document.getElementById('panel-en');
+    const panelAr = document.getElementById('panel-ar');
+
+    // Modal elements
+    const deleteBtn = document.getElementById('btn-delete-request');
+    const deleteModal = document.getElementById('delete-modal');
+    const modalContainer = document.getElementById('modal-container');
+    const cancelModalBtn = document.getElementById('btn-modal-cancel');
+    const deletionForm = document.getElementById('deletion-form');
+
+    let currentLang = 'en';
+
+    // Localization Dictionary
+    const translations = {
+      en: {
+        brandName: "Flex Fitness",
+        navPolicy: "Privacy Policy",
+        deleteBtn: "Delete Account",
+        pageTitle: "Privacy Policy",
+        footerCopyright: "© 2026 Flex Fitness",
+        footerLink: "Privacy Policy",
+        modalTitle: "Account Deletion Request",
+        modalDesc: "Please fill out this form to submit your account deletion request. We will process your request shortly.",
+        lblName: "Full Name",
+        lblPhone: "Registered Phone Number",
+        lblCivilId: "Civil ID / Passport",
+        lblReason: "Reason for Deletion",
+        lblConfirm: "I understand that deleting my account is permanent and all associated membership records will be deactivated.",
+        btnCancel: "Cancel",
+        btnSubmit: "Send Deletion Request",
+        placeholderName: "Enter your full name",
+        placeholderPhone: "e.g. +965 2227 5454",
+        placeholderCivilId: "Enter your Civil ID",
+        placeholderReason: "Briefly tell us why you are deleting your account"
+      },
+      ar: {
+        brandName: "فلكس فتنس",
+        navPolicy: "سياسة الخصوصية",
+        deleteBtn: "حذف الحساب",
+        pageTitle: "سياسة الخصوصية",
+        footerCopyright: "© 2026 فلكس فتنس",
+        footerLink: "سياسة الخصوصية",
+        modalTitle: "طلب حذف الحساب",
+        modalDesc: "يرجى ملء هذا النموذج لتقديم طلب حذف حسابك. سنقوم بمعالجة طلبك في أقرب وقت ممكن.",
+        lblName: "الاسم الكامل",
+        lblPhone: "رقم الهاتف المسجل",
+        lblCivilId: "البطاقة المدنية / جواز السفر",
+        lblReason: "سبب الحذف",
+        lblConfirm: "أدرك أن حذف حسابي نهائي وسيتم إلغاء تفعيل جميع سجلات العضوية المرتبطة به.",
+        btnCancel: "إلغاء",
+        btnSubmit: "إرسال طلب الحذف",
+        placeholderName: "أدخل اسمك الكامل",
+        placeholderPhone: "مثال: +965 2227 5454",
+        placeholderCivilId: "أدخل رقم بطاقتك المدنية",
+        placeholderReason: "أخبرنا باختصار عن سبب رغبتك في حذف الحساب"
+      }
+    };
+
+    function showLang(lang) {
+      currentLang = lang;
+      const isEN = lang === 'en';
+      panelEn.hidden = !isEN;
+      panelAr.hidden = isEN;
+      btnEn.classList.toggle('active', isEN);
+      btnAr.classList.toggle('active', !isEN);
+
+      // Translate core page
+      document.getElementById('txt-brand-name').textContent = translations[lang].brandName;
+      document.getElementById('txt-nav-policy').textContent = translations[lang].navPolicy;
+      deleteBtn.textContent = translations[lang].deleteBtn;
+      document.getElementById('txt-page-title').textContent = translations[lang].pageTitle;
+      document.getElementById('txt-footer-copyright').textContent = translations[lang].footerCopyright;
+      document.getElementById('txt-footer-link').textContent = translations[lang].footerLink;
+
+      // Translate modal form
+      document.getElementById('modal-title').textContent = translations[lang].modalTitle;
+      document.getElementById('modal-desc').textContent = translations[lang].modalDesc;
+      document.getElementById('lbl-name').textContent = translations[lang].lblName;
+      document.getElementById('lbl-phone').textContent = translations[lang].lblPhone;
+      document.getElementById('lbl-civilid').textContent = translations[lang].lblCivilId;
+      document.getElementById('lbl-reason').textContent = translations[lang].lblReason;
+      document.getElementById('lbl-confirm').textContent = translations[lang].lblConfirm;
+      cancelModalBtn.textContent = translations[lang].btnCancel;
+      document.getElementById('btn-modal-submit').textContent = translations[lang].btnSubmit;
+
+      // Translate placeholders
+      document.getElementById('del-name').placeholder = translations[lang].placeholderName;
+      document.getElementById('del-phone').placeholder = translations[lang].placeholderPhone;
+      document.getElementById('del-civilid').placeholder = translations[lang].placeholderCivilId;
+      document.getElementById('del-reason').placeholder = translations[lang].placeholderReason;
+
+      // Adjust RTL support inside the modal
+      if (lang === 'ar') {
+        modalContainer.classList.add('rtl');
+        modalContainer.setAttribute('lang', 'ar');
+      } else {
+        modalContainer.classList.remove('rtl');
+        modalContainer.removeAttribute('lang');
+      }
+    }
+
+    btnEn.addEventListener('click', () => showLang('en'));
+    btnAr.addEventListener('click', () => showLang('ar'));
+
+    // Modal visibility event listeners
+    deleteBtn.addEventListener('click', () => {
+      deleteModal.classList.add('active');
+    });
+
+    cancelModalBtn.addEventListener('click', () => {
+      deleteModal.classList.remove('active');
+      deletionForm.reset();
+    });
+
+    // Close modal when clicking outside the box
+    deleteModal.addEventListener('click', (e) => {
+      if (e.target === deleteModal) {
+        deleteModal.classList.remove('active');
+        deletionForm.reset();
+      }
+    });
+
+    // Handle form submission and generate email
+    deletionForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('del-name').value;
+      const phone = document.getElementById('del-phone').value;
+      const civilId = document.getElementById('del-civilid').value;
+      const reason = document.getElementById('del-reason').value;
+
+      // Construct dynamic mailto link
+      const emailRecipient = "info@flexq8.com";
+      const subject = encodeURIComponent("Account Deletion Request - " + name);
+      
+      const emailBody = encodeURIComponent(
+        "Dear Support Team,\n\n" +
+        "I am writing to formally request the permanent deletion of my account. Below are my registration details:\n\n" +
+        "- Full Name: " + name + "\n" +
+        "- Phone Number: " + phone + "\n" +
+        "- Civil ID / Passport: " + civilId + "\n" +
+        "- Reason for Deletion: " + reason + "\n\n" +
+        "I understand that this action is permanent and cannot be undone.\n\n" +
+        "Best regards,\n" +
+        name
+      );
+
+      // Trigger user email client
+      window.location.href = `mailto:${emailRecipient}?subject=${subject}&body=${emailBody}`;
+
+      // Close modal and reset form
+      deleteModal.classList.remove('active');
+      deletionForm.reset();
+    });
+  </script>
+</body>
+</html>
